@@ -41,9 +41,9 @@ submit.addEventListener("click", function (e) {
   function checkGuess(guess) {
     if (guess === randomNumber) {
       displayMessage("Win, You guessed a right number");
-    } else if (guess < 1) {
+    } else if (guess < randomNumber) {
       displayMessage("Number is too low");
-    } else if (guess > 100) {
+    } else if (guess > randomNumber) {
       displayMessage("Number is too high");
     }
     prevGuessSlot.push(guess);
@@ -64,7 +64,7 @@ submit.addEventListener("click", function (e) {
   function endGame() {
     userInput.value = "";
     userInput.setAttribute("disabled", "");
-    newStartBtn.innerHTML = '<h3 id="startAgain">Start New Game</h3>';
+    newStartBtn.innerHTML = '<button id="startAgain">Start New Game</button>';
     newStartBtn.classList.add("startGameBtn");
     guessSection.appendChild(newStartBtn);
     playGame = false;
