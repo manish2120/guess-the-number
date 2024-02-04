@@ -40,7 +40,7 @@ submit.addEventListener("click", function (e) {
 
   function checkGuess(guess) {
     if (guess === randomNumber) {
-      displayMessage("You Won, You guessed a right number");
+      displayMessage("Win, You guessed a right number");
     } else if (guess < randomNumber) {
       displayMessage("Number is too low");
     } else if (guess > randomNumber) {
